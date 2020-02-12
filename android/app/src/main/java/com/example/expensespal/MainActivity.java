@@ -1,4 +1,4 @@
-package com.example.expensespal;
+package com.logigear.moex;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rmzsoft.expensespal"
+        applicationId "com.logigear.moex"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
