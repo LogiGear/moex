@@ -1,6 +1,6 @@
 import 'package:moex/common/ui/shadow_icon.dart';
 import 'package:moex/screens/home/expense/expense_page.dart';
-import 'package:moex/screens/home/more/more_page.dart';
+import 'package:moex/screens/home/settings/settings_page.dart';
 import 'package:moex/screens/home/stats/stats_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,22 +12,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final dashboard = ExpensePage();
-  final stats = StatsPage();
-  final more = MorePage();
+  final expensePage = ExpensePage();
+  final dashboardPage = StatsPage();
+  final settingsPage = SettingsPage();
 
   Widget _tabs;
 
   Widget _getBody(index) {
     switch (index) {
       case 0:
-        return dashboard;
+        return expensePage;
         break;
       case 1:
-        return stats;
+        return dashboardPage;
         break;
       case 2:
-        return more;
+        return settingsPage;
         break;
       default:
         return null;
@@ -91,14 +91,14 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: ShadowIcon(
-              Icons.more_horiz,
+              Icons.settings,
               offsetX: 0.0,
               offsetY: 0.0,
               blur: 3.0,
               shadowColor: Colors.black.withOpacity(0.25),
             ),
             title: Text(
-              'More',
+              'Settings',
               style: TextStyle(
                 shadows: <Shadow>[
                   Shadow(

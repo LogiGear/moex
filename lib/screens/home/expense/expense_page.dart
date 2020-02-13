@@ -175,7 +175,7 @@ class _ExpensePageState extends State<ExpensePage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              "SUMMARY",
+                              "TOTAL",
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 15.0,

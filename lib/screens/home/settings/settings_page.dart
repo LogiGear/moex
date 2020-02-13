@@ -1,13 +1,10 @@
-import 'dart:io';
-
 import 'package:moex/common/ui/pal_title_view.dart';
-import 'package:moex/screens/home/more/policy_page.dart';
+import 'package:moex/screens/home/settings/policy_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:launch_review/launch_review.dart';
 
-class MorePage extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   _sendMail(String toMailId, String subject, String body) async {
     var url = 'mailto:$toMailId?subject=$subject&body=$body';
     if (await canLaunch(url)) {
@@ -35,7 +32,7 @@ class MorePage extends StatelessWidget {
                       width: 40.0,
                     ),
                     Flexible(
-                      child: PalTitleView(title: "MORE"),
+                      child: PalTitleView(title: "SETTINGS"),
                     ),
                     IconButton(
                       icon: Icon(Icons.help_outline),
@@ -52,18 +49,6 @@ class MorePage extends StatelessWidget {
             child: Container(
               child: ListView(
                 children: <Widget>[
-                  ListTile(
-                    leading: Icon(
-                      Icons.rate_review,
-                      color: Colors.green[600],
-                    ),
-                    title: Text(Platform.isIOS
-                        ? 'Rate us on AppStore'
-                        : 'Rate us on GooglePlay'),
-                    onTap: () {
-                      LaunchReview.launch();
-                    },
-                  ),
                   ListTile(
                     leading: Icon(
                       Icons.book,
@@ -88,7 +73,8 @@ class MorePage extends StatelessWidget {
                     ),
                     title: Text('Contact us'),
                     onTap: () {
-                      _sendMail("expense.pal.app@gmail.com", "Expense Pal", "Check out this app. It's really great!");
+                      _sendMail("expense.pal.app@gmail.com", "Expense Pal",
+                          "Check out this app. It's really great!");
                     },
                   ),
                 ],
