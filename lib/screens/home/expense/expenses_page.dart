@@ -15,12 +15,12 @@ import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:rxdart/rxdart.dart';
 
-class ExpensePage extends StatefulWidget {
+class ExpensesPage extends StatefulWidget {
   @override
-  _ExpensePageState createState() => _ExpensePageState();
+  _ExpensesPageState createState() => _ExpensesPageState();
 }
 
-class _ExpensePageState extends State<ExpensePage> {
+class _ExpensesPageState extends State<ExpensesPage> {
   final addPage = AddExpensePage();
   final filterPage = FilterPage();
 
@@ -136,18 +136,11 @@ class _ExpensePageState extends State<ExpensePage> {
                             ),
                             Expanded(
                               child: Text(
-                                'There is a $activeFilters active filter' +
-                                    (activeFilters > 1 ? 's' : ''),
+                                'Active Filter: $activeFilters',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    shadows: [
-                                      Shadow(
-                                        offset: Offset(2.0, 2.0),
-                                        blurRadius: 2.0,
-                                        color: Colors.black.withOpacity(0.3),
-                                      ),
-                                    ]),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -202,7 +195,7 @@ class _ExpensePageState extends State<ExpensePage> {
   Widget _buildList(
       FilteredList<Expense> expenses, ExpensesBloc bloc, bool filtersActive) {
     if (expenses.length <= 0) {
-      return _DashboardEmptyState(filtersActive: filtersActive);
+      return _ExpensesEmptyState(filtersActive: filtersActive);
     }
 
     List<dynamic> items = [];
@@ -415,10 +408,10 @@ class _ExpenseCard extends StatelessWidget {
   }
 }
 
-class _DashboardEmptyState extends StatelessWidget {
+class _ExpensesEmptyState extends StatelessWidget {
   final bool filtersActive;
 
-  _DashboardEmptyState({@required this.filtersActive});
+  _ExpensesEmptyState({@required this.filtersActive});
 
   @override
   Widget build(BuildContext context) {
@@ -445,21 +438,14 @@ class _DashboardEmptyState extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 18.0,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
-                  ),
-                ],
               ),
             ),
           ),
         ),
         PalButton(
-          title: "ADD",
+          title: "Add Expense",
           width: MediaQuery.of(context).size.width * (2.0 / 3.0),
-          colors: [Colors.green[600], Colors.green[900]],
+          highlightColor: Colors.lightBlue,
           onPressed: () {
             Navigator.of(context).push(
               CupertinoPageRoute(

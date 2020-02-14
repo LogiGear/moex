@@ -37,9 +37,9 @@ class PalButton extends StatelessWidget {
 
     if (colors == null) {
       decoration = BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
+        // borderRadius: BorderRadius.circular(radius),
         border: Border.all(color: Colors.white, width: 1.0),
-        color: Colors.transparent,
+        color: Colors.lightBlue,
       );
     } else {
       decoration = BoxDecoration(
@@ -61,7 +61,7 @@ class PalButton extends StatelessWidget {
           child: FlatButton(
             child: Text(
               title,
-              style: TextStyle(color: textColor),
+              style: TextStyle(color: textColor, fontSize: 16.0),
             ),
             onPressed: onPressed,
             highlightColor: highlightColor,

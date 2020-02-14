@@ -19,27 +19,7 @@ class MoExApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
-      home: Material(
-        type: MaterialType.transparency,
-        child: FutureBuilder<bool>(
-          future: onboardingShown(),
-          builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-            if (snapshot.hasData) {
-              if (snapshot.data) {
-                return home;
-              } else {
-                showOnboarding();
-                return onboarding;
-              }
-            } else {
-              return Container(
-                color: Colors.white,
-                child: Image.asset(Assets.logo),
-              );
-            }
-          },
-        ),
-      ),
+      home: HomePage(),
     );
   }
 

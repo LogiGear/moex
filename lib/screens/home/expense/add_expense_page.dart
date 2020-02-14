@@ -97,7 +97,7 @@ class AddExpensePageState extends State<AddExpensePage> {
                         },
                       ),
                       Flexible(
-                        child: PalTitleView(title: "ADD"),
+                        child: PalTitleView(title: "ADD EXPENSE"),
                       ),
                       Container(
                         width: 40.0,
@@ -117,7 +117,7 @@ class AddExpensePageState extends State<AddExpensePage> {
                       title: TextFormField(
                         controller: titleController,
                         decoration: InputDecoration(
-                          hintText: "Title",
+                          hintText: "What is this for?",
                         ),
                         validator: (value) {
                           if (value.isEmpty) {
@@ -192,7 +192,9 @@ class AddExpensePageState extends State<AddExpensePage> {
                                     child: ColorPicker(
                                       pickerColor: currentColor,
                                       onColorChanged: changeColor,
-                                      colorPickerWidth: MediaQuery.of(context).size.width - 32.0,
+                                      colorPickerWidth:
+                                          MediaQuery.of(context).size.width -
+                                              32.0,
                                       pickerAreaHeightPercent: 0.7,
                                       enableAlpha: true,
                                     ),
@@ -247,9 +249,9 @@ class AddExpensePageState extends State<AddExpensePage> {
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: PalButton(
-                        title: "ADD",
+                        title: "Add",
                         width: MediaQuery.of(context).size.width * (2.0 / 3.0),
-                        colors: [Colors.green[600], Colors.green[900]],
+                        highlightColor: Colors.lightBlue,
                         onPressed: () {
                           if (!_formKey.currentState.validate()) {
                             return;

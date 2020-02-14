@@ -1,5 +1,4 @@
-import 'package:moex/common/ui/shadow_icon.dart';
-import 'package:moex/screens/home/expense/expense_page.dart';
+import 'package:moex/screens/home/expense/expenses_page.dart';
 import 'package:moex/screens/home/settings/settings_page.dart';
 import 'package:moex/screens/home/stats/stats_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final expensePage = ExpensePage();
+  final expensePage = ExpensesPage();
   final dashboardPage = StatsPage();
   final settingsPage = SettingsPage();
 
@@ -48,74 +47,35 @@ class _HomePageState extends State<HomePage> {
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: ShadowIcon(
+            icon: Icon(
               Icons.attach_money,
-              offsetX: 0.0,
-              offsetY: 0.0,
-              blur: 3.0,
-              shadowColor: Colors.black.withOpacity(0.25),
             ),
             title: Text(
               'Expenses',
-              style: TextStyle(
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
-                  ),
-                ],
-              ),
             ),
           ),
           BottomNavigationBarItem(
-            icon: ShadowIcon(
+            icon: Icon(
               Icons.dashboard,
-              offsetX: 0.0,
-              offsetY: 0.0,
-              blur: 3.0,
-              shadowColor: Colors.black.withOpacity(0.25),
             ),
             title: Text(
               'Dashboard',
-              style: TextStyle(
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
-                  ),
-                ],
-              ),
             ),
           ),
           BottomNavigationBarItem(
-            icon: ShadowIcon(
+            icon: Icon(
               Icons.settings,
-              offsetX: 0.0,
-              offsetY: 0.0,
-              blur: 3.0,
-              shadowColor: Colors.black.withOpacity(0.25),
             ),
             title: Text(
               'Settings',
-              style: TextStyle(
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
-                  ),
-                ],
-              ),
             ),
           ),
         ],
-        backgroundColor: Colors.white,
-        border: null,
+        backgroundColor: Colors.grey[100],
+        border: Border(top: BorderSide(color: Colors.grey[200])),
         iconSize: 28.0,
-        activeColor: Colors.green[700],
-        inactiveColor: const Color(0xFFa3a3a3),
+        activeColor: Colors.lightBlue,
+        inactiveColor: Colors.grey,
       ),
       tabBuilder: (BuildContext context, int index) {
         return CupertinoTabView(

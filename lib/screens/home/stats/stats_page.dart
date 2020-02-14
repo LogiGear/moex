@@ -268,13 +268,6 @@ class StatsPage extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 2.0,
-                            color: Colors.black.withOpacity(0.3),
-                          ),
-                        ],
                       )),
                 ),
               );
@@ -294,7 +287,7 @@ class StatsPage extends StatelessWidget {
                             width: 40.0,
                           ),
                           Flexible(
-                            child: PalTitleView(title: "STATS"),
+                            child: PalTitleView(title: "DASHBOARD"),
                           ),
                           IconButton(
                             icon: Icon(Icons.help_outline),

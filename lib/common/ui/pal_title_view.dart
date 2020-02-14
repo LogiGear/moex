@@ -10,16 +10,9 @@ class PalTitleView extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        color: Colors.green[700],
-        fontSize: 18.0,
+        color: Colors.lightBlue,
+        fontSize: 24.0,
         fontWeight: FontWeight.w600,
-        shadows: <Shadow>[
-          Shadow(
-            offset: Offset(2.0, 2.0),
-            blurRadius: 2.0,
-            color: Colors.black.withOpacity(0.15),
-          ),
-        ],
       ),
     );
   }

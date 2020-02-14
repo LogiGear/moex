@@ -204,9 +204,9 @@ class FilterPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: PalButton(
-                        title: "APPLY",
+                        title: "Apply",
                         width: MediaQuery.of(context).size.width * (2.0 / 3.0),
-                        colors: [Colors.green[600], Colors.green[900]],
+                        highlightColor: Colors.lightBlue,
                         onPressed: () {
                           List<ExpenseFilter> filters = [];
 
